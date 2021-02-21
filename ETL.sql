@@ -1,7 +1,7 @@
 
 
-drop table if exists fact_purshases;
-create table fact_purshases (
+drop table if exists public.fact_purshases;
+create table public.fact_purshases (
 calendareDate date,
 utmpSource varchar(100),
 number_of_registrations int,
