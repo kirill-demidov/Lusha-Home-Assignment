@@ -11,4 +11,4 @@ All transformations with source data are [here](https://github.com/kirill-demido
 The final table is called 'fact_purshases' 
 
 ## Report mockup 
-To create mockup of reports I've used PowerBI - so you can find example of reports in [pdf file](https://github.com/kirill-demidov/lusha_Home_assignment/blob/main/Report%20Mockup.pdf) and I've uploaded the [powerbi file](https://github.com/kirill-demidov/lusha_Home_assignment/blob/main/Lusha_Reports_mockup.pbix) with imported from postgresql dataset   
+To create mockup of reports I've used PowerBI - so you can find example of reports in [pdf file](https://github.com/kirill-demidov/lusha_Home_assignment/blob/main/Report%20Mockup.pdf) and I've uploaded the [powerbi file](https://github.com/kirill-demidov/lusha_Home_assignment/blob/main/Lusha_Reports_mockup.pbix) with imported dataset from postgresql    
