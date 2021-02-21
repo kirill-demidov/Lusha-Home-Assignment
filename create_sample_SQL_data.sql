@@ -1,7 +1,6 @@
 drop table if exists "user_utm"
 
 CREATE TABLE "user_utm" (
-  id SERIAL PRIMARY KEY,
   utmDate varchar(255),
   userId integer NULL,
   utmSource varchar(255) default NULL
@@ -34,7 +33,6 @@ INSERT INTO "user_utm" (utmDate,userId,utmSource) VALUES ('2021-04-04 18:56:58',
 DROP TABLE IF EXISTS "users";
 
 CREATE TABLE "users" (
-  
   registrationDate varchar(255),
   userId integer NULL
 );
@@ -76,7 +74,5 @@ INSERT INTO "purchases" (PurshaseDate,userId,billing) VALUES ('2021-01-16 21:20:
 INSERT INTO "purchases" (PurshaseDate,userId,billing) VALUES ('2021-11-03 07:56:04',5,814),('2021-12-17 14:45:10',9,433),('2020-09-02 04:03:36',4,818),('2020-09-18 08:10:41',4,602),('2020-04-06 23:59:31',2,646),('2021-12-01 06:41:55',9,909),('2021-10-27 20:19:49',8,367),('2021-04-07 02:44:23',10,848),('2020-12-18 08:21:45',1,184),('2021-03-30 03:43:26',9,385);
 INSERT INTO "purchases" (PurshaseDate,userId,billing) VALUES ('2020-10-09 01:52:32',2,406),('2021-06-29 13:06:46',2,855),('2020-07-07 17:03:20',5,333),('2020-09-03 13:20:50',3,120),('2021-10-06 07:58:38',5,805),('2021-12-11 17:13:48',7,183),('2021-03-29 17:55:53',1,633),('2020-07-31 20:51:42',6,192),('2020-03-11 01:16:36',8,933),('2021-12-13 14:24:15',2,909);
 
-select * 
-from purchases
 
 
