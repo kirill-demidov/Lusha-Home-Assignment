@@ -29,7 +29,6 @@ group by uu.utmsource, cast(uu.utmdate  as date)
 
 
 /*populate table stg_purchases*/
-defc
 CREATE OR REPLACE PROCEDURE public.populate_stg_purshase()
  LANGUAGE plpgsql
 AS $procedure$
@@ -75,7 +74,7 @@ end loop;
 end;
 $procedure$
 ;
-call public.populate_stg_purshase()
+call public.populate_stg_purshase();
 
 --/*getting number of purshases by date and utmsource*/
 --select count(*), utmsource, cast(purshasedate as date)
@@ -94,7 +93,7 @@ call public.populate_stg_purshase()
 truncate table fact_purshases;
 insert into fact_purshases (calendaredate, utmpsource)
 select distinct cast(utmdate as date) , utmsource
-from user_utm 
+from user_utm ;
 
 
 
@@ -102,7 +101,7 @@ from user_utm
 update fact_purshases a
 set number_of_registrations = count
 from stg_registration b 
-where a.calendaredate =b.utmdate and a.utmpsource =b.utmsource 
+where a.calendaredate =b.utmdate and a.utmpsource =b.utmsource ;
 
 ---set purshase number
 with purshase_cnt as (select count(*) cnt ,utmsource, cast(purshasedate as date) pdate
@@ -111,7 +110,7 @@ where row_num =1
 group by utmsource, cast(purshasedate as date))
 update fact_purshases a
 set number_of_purshases = b.cnt
-from purshase_cnt b where a.calendareDate=b.pdate and a.utmpsource=b.utmsource 
+from purshase_cnt b where a.calendareDate=b.pdate and a.utmpsource=b.utmsource ;
 
 ----set total billing 
 with purshase_cnt as (select sum(cash) total_billing ,utmsource, cast(purshasedate as date) pdate
@@ -119,12 +118,12 @@ from stg_purchases
 group by utmsource, cast(purshasedate as date))
 update fact_purshases a
 set total_billing = b.total_billing
-from purshase_cnt b where a.calendareDate=b.pdate and a.utmpsource=b.utmsource 
+from purshase_cnt b where a.calendareDate=b.pdate and a.utmpsource=b.utmsource ;
 
 
 select * 
 from fact_purshases
-order by 1,2
+order by 1,2;
 
 
 
