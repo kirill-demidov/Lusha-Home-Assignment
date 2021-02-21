@@ -1,4 +1,4 @@
-drop table user_utm
+drop table if exists "user_utm"
 
 CREATE TABLE "user_utm" (
   id SERIAL PRIMARY KEY,
